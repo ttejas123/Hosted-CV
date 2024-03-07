@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejas_Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .title-xl-Text {
+            font-size: 20px;
+        }
+        .title-md-Text {
+            font-size: 17px;
+        }
+        .subText {
+            font-size: 15px;
+        }
+        .divider {
+            border: 1px solid #0f2f2f;
+        }
+        .extraSpace{
+            /* padding-left: 10rem;
+            padding-right: 10rem; */
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+      <script>
+        function downloadHTML() {
+          const resumeContent = document.querySelector('.downloadContentclass').outerHTML;
+          const blob = new Blob([resumeContent], { type: 'text/html' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'resume.html';
+          a.click();
+        }
+    
+        function downloadPDF() {
+          const element = document.querySelector('.downloadContentclass');
+          const opt = {
+            margin: 1,
+            filename: 'resume.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { 
+                        orientation: 'p',
+                        unit: 'pt',
+                        format: 'a3',
+                        precision: 16,
+                        putOnlyUsedFonts:true,
+                        floatPrecision: 16  
+                    }
+          };
+          html2pdf().set(opt).from(element).save();
+          
+        }
+    
+        function downloadWord() {
+          // You can use a third-party library like html-docx-js or html-to-docx to convert HTML to Word file
+          // Or you can utilize a server-side API or service to generate Word files from HTML
+          alert('Word file download functionality is not implemented yet.');
+        }
+      </script>
+</head>
+
+<body class="bg-gray-100 relative">
+    <div class="sticky top-[5%] mr-3 flex justify-end">
+        <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="downloadHTML()">Download HTML</button> -->
+        <button class="bg-while-500 hover:bg-gray-200  font-bold py-2 px-4 rounded flex text-current border border-2 justify-center items-center " onclick="downloadPDF()">Download<img width="20" class="ml-2" height="20" src="https://img.icons8.com/material-sharp/24/download--v2.png" alt="download--v2"/></button>
+        <!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="downloadWord()">Download Word</button> -->
+    </div>
+    <div class="extraSpace">
+    <div class="bg-white px-[60px] py-[30px] w-[1100px] rounded-2xl shadow-2xl downloadContentclass">
+        <!-- Header Section -->
+        <section class=" py-2">
+            <h2 class="flex justify-center font-bold title-xl-Text">Tejas Thakare, Software Engineer</h2>
+            <h3 class="flex justify-center subText pt-2">Airoli, Navi Mumbai, India, +91 8433841610, tthakare@gmail.com, @Braandlock</h3>
+        </section>
+        <hr class="divider my-3" />
+        <!-- Links Section -->
+        <section class="flex justify-center items-center py-2">
+            <div class="flex-[0.3] title-md-Text italic">
+                LINKS
+            </div>
+            <div class="flex-[0.7] subText underline">
+                Portfolio, Github, Linkedin, Coding Profile
+            </div>
+        </section>
+        <hr class="divider my-3" />
+        <!-- Profile Section -->
+        <section class="flex justify-center items-center py-2">
+            <div class="flex-[0.3] title-md-Text italic">
+                PROFILE
+            </div>
+            <div class="flex-[0.7] subText">
+                Aspiring to work with an organization where I can utilize my skills and capabilities to curve a niche for myself and effectively deliver toward the organization's objectives.
+            </div>
+        </section>
+        <hr class="divider my-3" />
+        <!-- Employement Section -->
+        <section class="flex-col justify-center items-center py-2">
+            <div class="flex-[1.0] title-md-Text italic">
+                EMPLOYEMENT HISTORY
+            </div>
+            <div class="subText flex justify-center items-center w-full">
+                <span class="w-[30%] text-left ">Apr-2023 -- Present</span>
+                <span class="w-[70%]">
+                    <span class="flex justify-between items-center w-full">
+                        <span class="title-xl-Text">Full stack developer, Brandlock FFZ LLC</span>
+                        <span class="italic">Ghatkoper, Mumbai</span>
+                    </span>
+                    <span>
+                        Achievements/Tasks
+                    </span>
+                    <span>
+                        <li>Worked on Barndlock Dashboard and improve the performance, added features which helped our team such as cronJob, Emails, (page-speed api) to verify script etc, and this helps users to get better live insights about our product performance based on 7 different KPI metrics.</li>
+                        <li>Created server side UI and build fluid dashboard POC which can help to replace current dashboard.</li>
+                        <li>We have added 6 different "shoppers"/services which helps in e- com optimization and our dashboard provides there 7 each performance metrics results every day.</li>
+                    </span>
+                </span>
+            </div>
+            <div class="subText flex justify-center items-center w-full my-3 py-3">
+                <span class="w-[30%] text-left ">May-2022 -- May-2023</span>
+                <span class="w-[70%]">
+                    <span class="flex justify-between items-center w-full">
+                        <span class="title-xl-Text">Full stack developer, Soulofox studio inc</span>
+                        <span class="italic">Mumbai</span>
+                    </span>
+                    <span>
+                        Achievements/Tasks
+                    </span>
+                    <span>
+                        <li>Developed a full-stack web application that handled soulofox web gaming in web3, we handle more than 100+ concurrent users with minimal downtime.</li>
+                        <li>Develop and maintain UI in NextJS , maintain app back-end with NodeJS/Loopback4 and Improve reusability of code and made Blockchain ( Web3 ) contracts. Test & document the Api and Services.</li>
+                        <li>Improve Existing website and Deploy it using AWS & Created CI/CD & Writing Bash or docker file.</li>
+                    </span>
+                </span>
+            </div>
+            <div class="subText flex justify-center items-center w-full">
+                <span class="w-[30%] text-left ">jul-2020 -- Nov-2021</span>
+                <span class="w-[70%]">
+                    <span class="flex justify-between items-center w-full">
+                        <span class="title-xl-Text">Full stack developer, COENSE SOLUTIONS PRIVATE LIMITED</span>
+                        <span class="italic">Kandivali, Mumbai</span>
+                    </span>
+                    <span>
+                        Achievements/Tasks
+                    </span>
+                    <span>
+                        <li>Implemented a Responsive Design that allowed the application to be used on various devices with the same user experience.</li>
+                        <li>Improved the application performance by 30% by optimizing the back-end code and added React-redux and context api in front-end.</li>
+                    </span>
+                </span>
+            </div>
+        </section>
+        <hr class="divider my-3" />
+        <!-- Skills Section -->
+        <section class="flex justify-center items-center py-2">
+            <div class="flex-[0.3] title-md-Text italic">
+                SKILLS
+            </div>
+            <div class="flex-[0.7] subText">
+                <div class="">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Node.js</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Dashboard</p>
+                        <p class="text-gray-600">Expert</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">JavaScript</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Jetpack</p>
+                        <p class="text-gray-600">Expert</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">React.js</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Amazon Web Services</p>
+                        <p class="text-gray-600">Skilled</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">PostgreSQL</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Docker (Software)</p>
+                        <p class="text-gray-600">Beginner</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">MongoDB</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Performance Improvement</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">HTML &amp; CSS</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Hosting</p>
+                        <p class="text-gray-600">Skilled</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">CSS</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">GraphQL</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Git</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Socket.io</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Java</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Bootstrap (Front-End Framework)</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Android (Jetpack Compose)</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Blockchain</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Firebase</p>
+                        <p class="text-gray-600">Beginner</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">Postman</p>
+                        <p class="text-gray-600">Experienced</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">SQL (Programming Language)</p>
+                        <p class="text-gray-600">Expert</p>
+                      </div>
+                      <div class="flex justify-between">
+                        <p class="text-gray-700 font-semibold">PageSpeed</p>
+                        <p class="text-gray-600">Skillful</p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <hr class="divider my-3" />
+        <!-- Education Section -->
+        <section class="flex-col justify-center items-center py-2">
+            <div class="flex-[1.0] title-md-Text italic">
+                EDUCATION
+            </div>
+            <div class="subText flex justify-center items-center w-full">
+                <span class="w-[30%] text-left ">Jun-2021 -- May-2023</span>
+                <span class="w-[70%]">
+                    <span class="flex justify-between items-center w-full">
+                        <span class="title-xl-Text">Masters of science in computer science, Mumbai university kalina</span>
+                        <span class="italic">Mumbai</span>
+                    </span>
+                    <span>
+                        CGPA: 8.90
+                    </span>
+                </span>
+            </div>
+            <div class="subText flex justify-center items-center w-full  pt-5">
+                <span class="w-[30%] text-left ">Apr-2023-Present</span>
+                <span class="w-[70%]">
+                    <span class="flex justify-between items-center w-full">
+                        <span class="title-xl-Text">Bachelor of science in Information and technology, RADAV college </span>
+                        <span class="italic">Mumbai</span>
+                    </span>
+                    <span>
+                        CGPA: 8.80
+                    </span>
+                </span>
+            </div>
+        </section>
+    </div>
+    </div>
+   
+</body>
+</html>
